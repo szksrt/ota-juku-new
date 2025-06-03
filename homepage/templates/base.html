@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}太田塾{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<header>
+    <a href="/">
+        <img src="{% static 'images/logo.png' %}" alt="太田塾 ロゴ" class="logo">
+    </a>
+    <div style="margin-left: auto; display: flex; align-items: center;">
+        <a href="/contact/" 
+           style="background: #e82c5e; color: white; padding: 0.4rem 1rem; border-radius: 20px; text-decoration: none; font-size: 0.9rem; margin-right: 1rem;">
+            資料請求・ご相談
+        </a>
+        <div class="menu-btn" onclick="openMenu()" aria-label="メニューを開く">&#9776;</div>
+    </div>
+</header>
+
+
+
+    <!-- ハンバーガーメニュー -->
+    <nav class="menu" id="menu">
+        <div class="close-btn" onclick="closeMenu()">×</div>
+        <ul>
+            <li><a href="/">トップページ</a></li>
+            <li><a href="/feature/">特徴</a></li>
+            <li><a href="/greeting/">塾長挨拶</a></li>
+            <li><a href="/courses/">コース案内</a></li>
+            <li><a href="/courses/elementary/">小学生コース</a></li>
+            <li><a href="/courses/junior/">中学生コース</a></li>
+            <li><a href="/courses/high/">高校生コース</a></li>
+            <li><a href="/online/">オンライン授業</a></li>
+            <li><a href="/admission/">入塾の流れ</a></li>
+            <li><a href="/trial/">無料体験授業</a></li>
+            <li><a href="/faq/">よくある質問</a></li>
+            <li><a href="/about/">塾概要</a></li>
+            <li><a href="/contact/">お問い合わせフォーム</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        {% block content %}
+        <!-- 各ページの内容がここに差し込まれる -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 太田塾</p>
+    </footer>
+
+    <script>
+        function openMenu() {
+            document.getElementById('menu').style.display = 'block';
+        }
+        function closeMenu() {
+            document.getElementById('menu').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

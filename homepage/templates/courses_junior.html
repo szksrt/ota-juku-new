@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}中学生コース | 太田塾{% endblock %}
+{% block content %}
+
+<h2 style="text-align: center; margin-top: 1rem;">中学生コース</h2>
+<p style="text-align: center;"><a href="/">トップ</a> / 中学生コース</p>
+
+<section style="max-width: 600px; margin: 2rem auto;">
+    <div style="text-align: center; margin-bottom: 1.5rem;">
+        <img src="{% static 'images/junior_school.jpg' %}" alt="中学生コース" style="width: 100%; border-radius: 8px;">
+    </div>
+
+    <h3 style="color: #e82c5e; margin-top: 0;">定期テスト対策や受験に向けての対策授業！<br>生活に合わせた学習方法で着実にレベルアップ！</h3>
+    <p>
+        中学生コースでは、「学校の勉強がわからない」「定期テストの点数が伸びない」「受験が不安」といった悩みを解消するため、一人ひとりの学習状況に合わせた授業を行います。<br>
+        定期テストや受験対策に対応していますので、目標に向かって頑張りましょう！<br>
+        対象教科：数学・英語・国語・理科・社会
+    </p>
+
+    <div style="margin: 1.5rem 0;">
+        <a href="/contact/" style="background: #e82c5e; color: white; padding: 0.5rem 1rem; border-radius: 20px; text-decoration: none;">無料体験授業はこちら</a>
+    </div>
+
+    <h3 style="color: #e82c5e; margin-top: 2rem;">学習プラン</h3>
+    <p>一人一人に合わせたプラン</p>
+
+    <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+        <div style="border: 1px solid #ccc; border-radius: 8px; padding: 1rem;">
+            <p><strong style="color: #e82c5e;">✎ 授業の予習復習</strong></p>
+            <p>学校の授業で習った内容をそのままにせず復習を行います。わからないところをサポートします。</p>
+        </div>
+
+        <div style="border: 1px solid #ccc; border-radius: 8px; padding: 1rem;">
+            <p><strong style="color: #e82c5e;">✎ 苦手科目克服</strong></p>
+            <p>苦手科目を徹底的に学習できます。苦手分野を分析して、安心して学習できるようサポートします。</p>
+        </div>
+
+        <div style="border: 1px solid #ccc; border-radius: 8px; padding: 1rem;">
+            <p><strong style="color: #e82c5e;">✎ 定期テスト対策</strong></p>
+            <p>定期テスト前に対策授業を実施します。苦手な単元も含めて、安心して学習できるようサポートします。</p>
+        </div>
+
+        <div style="border: 1px solid #ccc; border-radius: 8px; padding: 1rem;">
+            <p><strong style="color: #e82c5e;">✎ 部活との両立</strong></p>
+            <p>部活を頑張る生徒さんも通いやすいプランニングを行います。バランス良く部活と勉強を両立できます。</p>
+        </div>
+
+        <div style="border: 1px solid #ccc; border-radius: 8px; padding: 1rem;">
+            <p><strong style="color: #e82c5e;">✎ 映像授業</strong></p>
+            <p>自宅でも学習できる映像授業を活用して、苦手克服や復習に役立てます。</p>
+        </div>
+
+        <div style="border: 1px solid #ccc; border-radius: 8px; padding: 1rem;">
+            <p><strong style="color: #e82c5e;">✎ 高校受験対策</strong></p>
+            <p>高校受験に向けての対策授業を実施します。志望校の出題傾向に合わせたプランニングで、合格を目指します。</p>
+        </div>
+    </div>
+
+    <h3 style="color: #e82c5e; margin-top: 2rem;">時間割</h3>
+    <div style="border-top: 2px solid #e82c5e; margin-top: 1rem;"></div>
+    <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+        <li>① 10:40～12:10</li>
+        <li>② 13:10～14:40</li>
+        <li>③ 14:50～16:20</li>
+        <li>④ 16:40～18:10</li>
+        <li>⑤ 18:20～19:50</li>
+        <li>⑥ 20:00～21:30</li>
+    </ul>
+    <p style="font-size: 0.9rem; margin-top: 1rem;">
+        ※土曜・日曜は1限～5限までの授業です。<br>
+        ※平日は4限～6限までの授業です。<br>
+        ※時期によって変動する場合もありますのでご了承ください。
+    </p>
+</section>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}コース案内 | 太田塾{% endblock %}
+{% block content %}
+<h2>コース案内</h2>
+<p>
+    太田塾では、小学生・中学生・高校生を対象に、それぞれの学年・学力・目的に応じたコースを設けています。<br>
+    また、オンライン授業も完備しており、どこからでも安心して受講いただけます。
+</p>
+<div class="course-buttons">
+    <a href="/courses/elementary/" class="elementary">小学生コース</a>
+    <a href="/courses/junior/" class="junior">中学生コース</a>
+    <a href="/courses/high/" class="high">高校生コース</a>
+    <a href="/online/" class="online">オンライン授業</a>
+</div>
+{% endblock %}
