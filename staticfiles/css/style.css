@@ -1,0 +1,145 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+header {
+    background: white;
+    color: black;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;               /* 画面上部に配置 */
+    left: 0;
+    width: 98%;
+}
+main {
+    padding-top: 110px;  /* ヘッダーの高さ分の余白を上部に作る */
+}
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+.menu-btn {
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+}
+.menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 999;
+    overflow-y: auto;
+}
+.menu ul {
+    list-style: none;
+    padding: 2rem;
+    margin: 0;
+}
+.menu ul li {
+    padding: 1rem 0;
+    border-bottom: 1px solid #ccc;
+    font-size: 1.2rem;
+}
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+}
+.menu a {
+    color: black;
+    text-decoration: none;
+}
+.main-visual {
+    background: #f0f0f0;
+    padding: 2rem;
+    text-align: center;
+}
+.main-visual h2 {
+    color: #e82c5e;
+    margin-bottom: 1rem;
+}
+.point-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+.point-list li {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    text-align: left;
+}
+.btn {
+    display: inline-block;
+    background: #e82c5e;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+}
+.section {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+.section h3 {
+    color: #e82c5e;
+    margin-bottom: 1rem;
+}
+.course-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 300px;
+    margin: 0 auto;
+}
+.course-buttons a {
+    display: block;
+    padding: 0.75rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.elementary {
+    background: #ff6f61;
+}
+.junior {
+    background: #4caf50;
+}
+.high {
+    background: #2196f3;
+}
+.online {
+    background: #ff9800;
+}
+.teacher,
+.info {
+    padding: 1rem;
+    text-align: center;
+}
+.teacher img,
+.info img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
