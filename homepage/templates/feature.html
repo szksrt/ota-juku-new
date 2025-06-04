@@ -1,10 +1,46 @@
 {% extends "base.html" %}
 {% block title %}特徴 | 太田塾{% endblock %}
 {% block content %}
-<h2>太田塾の特徴</h2>
-<p>
-    太田塾は、生徒一人ひとりの個性やペースに合わせたオーダーメイド指導を提供しています。<br>
-    経験豊富な講師陣とオリジナル教材を用いて、分かるまで徹底的にサポートします。<br>
-    また、保護者との密な連携を図り、学習状況をしっかり把握することで、安心して通塾いただける環境を整えています。
-</p>
+{% load static %}
+
+<h2 style="text-align: center; margin-top: 1rem;">特徴</h2>
+<p style="text-align: center;"><a href="/">トップ</a> / 特徴</p>
+
+<section style="max-width: 800px; margin: 2rem auto;">
+    <div style="margin-bottom: 2rem; text-align: center;">
+        <img src="{% static 'images/feature_main.jpg' %}" alt="特徴メイン画像" style="width: 100%; height: auto; border-radius: 8px;">
+    </div>
+
+    <section style="background: #f9f9f9; padding: 1.5rem; border-radius: 8px;">
+        <h3 style="color: #e82c5e; text-align: center;">当塾の特徴 <span style="font-size: 0.9rem; color: #555;">当塾の3つの特徴</span></h3>
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-around; margin-top: 1rem;">
+            
+            <div style="flex: 1 1 220px; margin: 1rem; background: white; border-radius: 8px; padding: 1rem; text-align: center;">
+                <img src="{% static 'images/icon_teacher.jpg' %}" alt="先生が丁寧に教えてくれる" style="width: 200px; height: auto; margin-bottom: 0.5rem;">
+                <p style="font-weight: bold; margin-bottom: 0.5rem;">先生が丁寧に教えてくれる</p>
+                <p style="font-size: 0.9rem; color: #555;">
+                    わからない問題に対して丁寧に教え、学ぶ楽しさを身につけていくことを一緒に考えていきます。
+                    苦手を「できる！」に変え、将来に役立つ力を育てます。
+                </p>
+            </div>
+            
+            <div style="flex: 1 1 220px; margin: 1rem; background: white; border-radius: 8px; padding: 1rem; text-align: center;">
+                <img src="{% static 'images/icon_up.jpg' %}" alt="着実にレベルアップ" style="width: 200px; height: auto; margin-bottom: 0.5rem;">
+                <p style="font-weight: bold; margin-bottom: 0.5rem;">着実にレベルアップ</p>
+                <p style="font-size: 0.9rem; color: #555;">
+                    一人ひとりのペースで無理なく学べる個別プランを作成し、着実に成績アップを目指します。
+                </p>
+            </div>
+            
+            <div style="flex: 1 1 220px; margin: 1rem; background: white; border-radius: 8px; padding: 1rem; text-align: center;">
+                <img src="{% static 'images/icon_tool.jpg' %}" alt="オリジナルツール" style="width: 200px; height: auto; margin-bottom: 0.5rem;">
+                <p style="font-weight: bold; margin-bottom: 0.5rem;">オリジナルツール</p>
+                <p style="font-size: 0.9rem; color: #555;">
+                    オリジナルテキストやPC・スマホで学べるWEBツールで効率的に学習をサポートします。
+                </p>
+            </div>
+        </div>
+    </section>
+</section>
+
 {% endblock %}
