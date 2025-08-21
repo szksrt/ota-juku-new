@@ -11,11 +11,58 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* 追加 */
     position: fixed;
-    top: 0;               /* 画面上部に配置 */
+    top: 0;
     left: 0;
-    width: 98%;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 999;
 }
+
+header > div {
+    min-width: 0; /* 追加 */
+    display: flex;
+    align-items: center;
+}
+
+/* 画面が大きいときだけmax-widthを制御 */
+@media screen and (min-width: 1200px) {
+    header {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 480px) {
+    header img.logo {
+        max-width: 120px;  /* さらに縮める */
+        height: auto;      /* 縦横比は自動で合わせる */
+    }
+}
+
+.right-area {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 1;  /* 狭いとき縮む */
+    overflow: hidden; /* はみ出さないように */
+}
+.contact-btn {
+    background: #e82c5e;
+    color: white;
+    padding: 0.4rem 0.8rem; /* 少し狭め */
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    white-space: nowrap; /* 改行させない */
+}
+.menu-btn {
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+}
+
 main {
     padding-top: 110px;  /* ヘッダーの高さ分の余白を上部に作る */
 }
