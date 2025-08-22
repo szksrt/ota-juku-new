@@ -9,11 +9,11 @@
 </head>
 <body>
 <header>
-    <a href="/">
+    <a href="{% url 'homepage:index' %}">
         <img src="{% static 'images/logo.png' %}" alt="太田塾 ロゴ" class="logo">
     </a>
     <div class="right-area">
-        <a href="/contact/" class="contact-btn">資料請求・ご相談</a>
+        <a href="{% url 'homepage:contact' %}" class="contact-btn">資料請求・ご相談</a>
         <div class="menu-btn" onclick="openMenu()" aria-label="メニューを開く">&#9776;</div>
     </div>
 </header>
