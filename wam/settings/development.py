@@ -1,8 +1,13 @@
 from .base import *
+import os
+from dotenv import load_dotenv
+
+# .envファイルを読み込む
+load_dotenv()
 
 DEBUG = True
 
-SECRET_KEY = 'dev-secret-key'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
