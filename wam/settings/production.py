@@ -9,7 +9,7 @@ DEBUG = False
 
 SECRET_KEY = os.environ['SECRET_KEY']  # 必須
 
-ALLOWED_HOSTS = ['ota-juku.onrender.com']
+ALLOWED_HOSTS = ['ota-juku-new.onrender.com']
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
