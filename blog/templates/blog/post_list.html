@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}お知らせ一覧 | {{ block.super }}{% endblock %}
+
+{% block content %}
+
+<h2 class="page-title">お知らせ一覧</h2>
+<p class="breadcrumb"><a href="{% url 'homepage:index' %}">トップ</a> / お知らせ一覧</p>
+
+<section class="content-section">
+    <div class="card-container">
+        {% for post in object_list %}
+        <div class="card post-card">
+            <h3 class="post-card-title">
+                <a href="{% url 'blog:post_detail' post.pk %}">{{ post.title }}</a>
+            </h3>
+            <p class="post-card-date">{{ post.published_date|date:"Y年n月j日" }}</p>
+            <p class="post-card-excerpt">{{ post.content|truncatechars:100 }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

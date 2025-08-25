@@ -1,52 +1,43 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}お問い合わせフォーム | 太田塾{% endblock %}
 {% block content %}
 
-<h2 style="text-align: center; margin-top: 1rem;">お問い合わせフォーム</h2>
+<h2 class="page-title">お問い合わせフォーム</h2>
+<p class="breadcrumb"><a href="{% url 'homepage:index' %}">トップ</a> / お問い合わせフォーム</p>
 
 {% if messages %}
-  <div style="max-width: 600px; margin: 1rem auto;">
+  <div class="messages-container">
     {% for message in messages %}
-      <div style="background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; padding: 1rem; margin-bottom: 1rem; border-radius: 4px;">
+      <div class="message message-success">
         {{ message }}
       </div>
     {% endfor %}
   </div>
 {% endif %}
 
-<p style="text-align: center;"><a href="/">トップ</a> / お問い合わせフォーム</p>
-
-<section style="background: #555; color: white; padding: 1rem; text-align: center; margin: 1rem 0;">
-    <h3 style="margin: 0;">無料体験授業を実施しています</h3>
-    <p style="margin: 0.5rem 0;">お気軽にご連絡ください</p>
+<section class="promo-banner">
+    <h3 class="promo-title">無料体験授業を実施しています</h3>
+    <p class="promo-text">お気軽にご連絡ください</p>
 </section>
 
-<form action="" method="post" style="max-width: 600px; margin: 2rem auto; background: #f9f9f9; padding: 1.5rem; border-radius: 8px;">
+<form action="" method="post" class="contact-form">
     {% csrf_token %}
 
-    <style>
-        input, select, textarea {
-            width: 100%;
-            padding: 0.5rem;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-    </style>
-
     {% for field in form %}
-    <div style="margin-bottom: 1rem;">
-        <label for="{{ field.id_for_label }}" style="font-weight: bold;">
-            {{ field.label }}{% if field.field.required %} <span style="color: red;">（必須）</span>{% endif %}
-        </label><br>
+    <div class="form-group">
+        <label for="{{ field.id_for_label }}" class="form-label">
+            {{ field.label }}{% if field.field.required %} <span class="label-required">（必須）</span>{% endif %}
+        </label>
         {{ field }}
         {% if field.errors %}
-        <div style="color: red; font-size: 0.9rem;">{{ field.errors|striptags }}</div>
+        <div class="form-error">{{ field.errors|striptags }}</div>
         {% endif %}
     </div>
     {% endfor %}
-    <div style="text-align: center; margin-top: 2rem;">
-        <button type="submit" style="background: #e82c5e; color: white; padding: 0.75rem 2rem; border: none; border-radius: 20px; font-size: 1.1rem; cursor: pointer;">
+
+    <div class="form-submit">
+        <button type="submit" class="submit-button">
             個人情報の取扱いに同意して送信
         </button>
     </div>

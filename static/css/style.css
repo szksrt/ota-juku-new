@@ -1,0 +1,1038 @@
+/* =================================================================
+   基本スタイル (Base Styles)
+   ================================================================= */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4; /* 白より少しグレーの方が目に優しい */
+}
+/* メニュー表示中の背景スクロールを禁止 */
+body.menu-is-open {
+    overflow: hidden;
+}
+
+/* =================================================================
+   ヘッダー (Header)
+   ================================================================= */
+header {
+    background: white;
+    padding: 1rem 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 999;
+    border-bottom: 1px solid #eee; /* 境界線を薄く追加 */
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right-area {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* 少し広げる */
+}
+
+.contact-btn {
+    background: #e82c5e;
+    color: white;
+    padding: 0.5rem 1rem; /* 少し大きく */
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem; /* 少し大きく */
+    white-space: nowrap;
+    transition: opacity 0.2s; /* ホバー効果を追加 */
+}
+.contact-btn:hover {
+    opacity: 0.8;
+}
+
+main {
+    padding-top: 110px;
+}
+
+@media screen and (max-width: 480px) {
+    header img.logo {
+        max-width: 120px;
+        height: auto;
+    }
+}
+
+/* =================================================================
+   ハンバーガーメニュー (Navigation Menu)
+   ================================================================= 
+/* ① オーバーレイ（半透明の背景）のスタイル */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒 */
+    z-index: 1000;
+    
+    /* フェードイン・アウトのための設定 */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.menu.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ② 白いパネル部分のスタイル */
+.menu-content {
+    position: absolute; /* オーバーレイに対して絶対配置 */
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100%;
+    background-color: #fff;
+    padding: 2rem;
+    box-sizing: border-box;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    overflow-y: auto; /* メニューが長い場合にスクロール */
+
+    /* 右からスライドさせるための設定 */
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu.is-open .menu-content {
+    transform: translateX(0); /* is-open時に元の位置に戻す */
+}
+
+
+/* --- ボタンとリストのスタイル --- */
+.menu-btn {
+    cursor: pointer;
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 2.5rem;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: #888;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 60px 0 0 0; /* close-btnと被らないように調整 */
+}
+
+   .menu ul li {
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.1rem;
+}
+
+.menu ul li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+
+/* =================================================================
+   共通コンポーネント (Common Components)
+   ================================================================= */
+.page-title {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 2.2rem;
+}
+
+.breadcrumb {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #777;
+}
+.breadcrumb a {
+    color: #e82c5e;
+    text-decoration: none;
+}
+
+.content-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem; /* スマホ用に左右余白を追加 */
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid #eee;
+}
+
+/* =================================================================
+   お知らせページ (Blog Pages)
+   ================================================================= */
+.card-container {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.post-card {
+    margin-bottom: 2rem;
+}
+.post-card:last-child {
+    margin-bottom: 0;
+}
+.post-card-title {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+.post-card-title a {
+    text-decoration: none;
+    color: #333;
+}
+.post-card-date {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 1rem;
+}
+.post-card-excerpt {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+.post-detail {
+    padding: 30px 40px;
+}
+.post-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+.post-date {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+.post-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+.back-to-list {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* =================================================================
+   塾概要ページ (About Page)
+   ================================================================= */
+.content-section.about-page {
+    max-width: 600px;
+}
+.about-block {
+    margin-bottom: 2rem;
+}
+.block-title {
+    color: #e82c5e;
+    margin: 0 0 1rem 0;
+}
+.block-subtitle {
+    font-size: 0.9rem;
+    color: #555;
+}
+.info-box {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+.info-item {
+    margin-bottom: 1rem;
+}
+.info-item:last-child {
+    margin-bottom: 0;
+}
+.info-item strong {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+.map-container {
+    margin-top: 1rem;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+}
+.map-iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.access-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+    line-height: 1.8;
+}
+.cta-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+.phone-button {
+    background: #e82c5e;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 1.5;
+}
+.phone-button .button-subtitle {
+    font-size: 0.8rem;
+}
+
+/* =================================================================
+   入塾の流れページ (Admission Page)
+   ================================================================= */
+.content-section.admission-page {
+    max-width: 600px;
+    padding: 1rem;
+}
+.step-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: #fff;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+}
+.step-card:last-child {
+    margin-bottom: 0;
+}
+.step-title {
+    color: #e82c5e;
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+}
+.step-description {
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* =================================================================
+   フッター (Footer)
+   ================================================================= */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1.5rem; /* 少し広げる */
+    margin-top: 3rem;
+}
+/* =================================================================
+   トップページ (Top Page)
+   ================================================================= */
+
+/* --- メインビジュアル --- */
+.main-visual {
+    background-color: #f0f0f0;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.main-visual-title {
+    color: #e82c5e;
+    margin-bottom: 1rem;
+}
+
+.main-visual-subtitle {
+    font-weight: bold;
+}
+
+.point-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.point-list li {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+}
+
+/* --- 汎用セクションスタイル --- */
+.section {
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.section-title {
+    color: #e82c5e;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* --- コース紹介 --- */
+.course-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.course-btn {
+    display: block;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out;
+}
+
+.course-btn:hover {
+    transform: translateY(-3px); /* 少し浮き上がる効果 */
+}
+
+.elementary { background: #ff6f61; }
+.junior { background: #4caf50; }
+.high { background: #2196f3; }
+.online { background: #ff9800; }
+
+/* --- お知らせ --- */
+.info-list {
+    max-width: 600px;
+    margin: 0 auto 1.5rem auto;
+    text-align: left;
+}
+.info-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+}
+.info-date {
+    color: #777;
+    margin-right: 1.5rem;
+    white-space: nowrap;
+}
+.info-title {
+    color: #333;
+    text-decoration: none;
+}
+.info-title:hover {
+    text-decoration: underline;
+}
+
+.btn-more {
+    color: #e82c5e;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* --- CTAセクション --- */
+.cta-section {
+    background: #f8d7da;
+}
+
+.btn {
+    display: inline-block;
+    background: #e82c5e;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+.btn:hover {
+    opacity: 0.8;
+}
+/* =================================================================
+   お問い合わせページ (Contact Page)
+   ================================================================= */
+
+/* --- 送信後のメッセージ --- */
+.messages-container {
+    max-width: 600px;
+    margin: 1rem auto;
+}
+.message {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid transparent;
+}
+.message-success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+/* --- PRバナー --- */
+.promo-banner {
+    background: #555;
+    color: white;
+    padding: 1.5rem; /* 少し広げる */
+    text-align: center;
+    margin: 2rem 0;
+}
+.promo-title {
+    margin: 0;
+}
+.promo-text {
+    margin: 0.5rem 0 0 0;
+}
+
+/* --- フォーム全体 --- */
+.contact-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: #f9f9f9;
+    padding: 2.5rem; /* 少し広げる */
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+/* --- フォームの各項目 --- */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    font-weight: bold;
+    display: block; /* ラベルをブロック要素にして改行 */
+    margin-bottom: 0.5rem;
+}
+
+.label-required {
+    color: #e82c5e; /* テーマカラーに合わせる */
+    font-weight: normal;
+}
+
+/* --- 入力欄 (input, select, textarea) --- */
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem; /* 少し広げる */
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #e82c5e;
+    box-shadow: 0 0 5px rgba(232, 44, 94, 0.3);
+}
+
+.form-error {
+    color: #e82c5e;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* --- 送信ボタン --- */
+.form-submit {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.submit-button {
+    background: #e82c5e;
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.submit-button:hover {
+    opacity: 0.8;
+}
+
+/* =================================================================
+   コース詳細ページ (Course Pages)
+   ================================================================= */
+
+.content-section.course-page {
+    max-width: 600px;
+}
+
+.course-main-image {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.course-main-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.course-catchphrase {
+    color: #e82c5e;
+    margin-top: 0;
+    line-height: 1.5;
+}
+
+.course-description {
+    line-height: 1.8;
+}
+
+.cta-button-container {
+    margin: 2rem 0;
+}
+
+.section-subtitle {
+    color: #e82c5e;
+    margin-top: 3rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #f8d7da;
+    padding-bottom: 0.5rem;
+}
+
+.plan-card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.plan-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    background-color: #fcfcfc;
+}
+
+.plan-title {
+    color: #e82c5e;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.plan-text {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.section-divider {
+    border-top: 2px solid #e82c5e;
+    margin-top: 1rem;
+}
+
+.timetable-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+    line-height: 2;
+}
+
+.timetable-notes {
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+.course-subjects-title {
+    color: #e82c5e;
+    margin-top: 2.5rem;
+    font-size: 1.2rem;
+}
+
+.course-subjects {
+    margin-top: 0.5rem;
+    line-height: 1.8;
+}
+
+/* =================================================================
+   コース案内ページ (Courses Overview Page)
+   ================================================================= */
+
+.content-section.courses-overview-page {
+    max-width: 800px;
+    text-align: center; /* コンテンツを中央寄せ */
+}
+
+.page-description {
+    line-height: 1.8;
+    margin-bottom: 3rem;
+    color: #555;
+}
+
+/* トップページと共通の.course-buttonsスタイルがここで適用される */
+.courses-overview-page .course-buttons {
+    margin-top: 2rem;
+}
+
+/* =================================================================
+   オンライン授業ページ (Online Page)
+   ================================================================= */
+
+.content-section.online-page {
+    max-width: 600px;
+}
+
+.intro-block {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.intro-title {
+    color: #e82c5e;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.concerns-list {
+    list-style: none;
+    padding: 0 1rem;
+    margin: 2rem 0;
+    line-height: 2;
+}
+
+.accent-box {
+    background: #fff5f5; /* テーマカラーに合わせた薄い背景色 */
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    border: 1px solid #f8d7da;
+}
+
+.info-box-title {
+    color: #e82c5e;
+    margin: 0 0 0.5rem 0;
+}
+
+.features-block {
+    margin-bottom: 2rem;
+}
+
+.merit-list {
+    list-style: none;
+    padding: 0;
+}
+
+.merit-list li {
+    margin-bottom: 1.5rem;
+}
+
+.merit-title {
+    color: #e82c5e;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.step-card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* 「入塾の流れ」の.step-cardを再利用するが、少しだけスタイルを上書き */
+.online-page .step-card {
+    text-align: center;
+}
+
+.step-number {
+    font-weight: bold;
+    color: #e82c5e;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.step-card-title {
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+/* 「入塾の流れ」の.step-descriptionを再利用 */
+.online-page .step-description {
+    font-size: 0.9rem;
+}
+
+/* =================================================================
+   塾長挨拶ページ (Greeting Page)
+   ================================================================= */
+
+.content-section.greeting-page {
+    max-width: 600px;
+}
+
+.principal-photo-container {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.principal-photo {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.greeting-headline {
+    color: #e82c5e;
+    margin-top: 0;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.greeting-text {
+    line-height: 1.8;
+    margin-top: 1.5rem;
+}
+
+/* プロフィールや実績に使う共通カード */
+.info-card {
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.info-card-title {
+    color: #e82c5e;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.info-card-text {
+    margin: 0;
+    line-height: 1.8;
+}
+
+/* カードごとの背景色 */
+.profile-card {
+    background: #f9f9f9;
+}
+
+.achievements-card {
+    background: #fff0f0;
+}
+
+/* 合格実績リスト */
+.achievements-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 2;
+}
+
+/* =================================================================
+   特徴ページ (Feature Page)
+   ================================================================= */
+
+.content-section.feature-page {
+    max-width: 800px;
+}
+
+.feature-main-image {
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.feature-main-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.features-container {
+    background: #f9f9f9;
+    padding: 2.5rem 2rem; /* 余白を調整 */
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* 共通の.section-titleを中央寄せにする */
+.features-container .section-title {
+    text-align: center;
+}
+.features-container .section-subtitle {
+    display: block; /* 改行させる */
+    font-size: 1rem;
+    color: #555;
+    margin-top: 0.5rem;
+}
+
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1.5rem; /* カード間の余白 */
+    margin-top: 2rem;
+}
+
+.feature-card {
+    flex: 1 1 220px; /* 横幅に応じて自動で折り返す設定 */
+    min-width: 220px;
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.feature-card-icon {
+    width: 180px; /* 少し小さく調整 */
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.feature-card-title {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.feature-card-text {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.7;
+    text-align: left; /* 説明文は左揃えの方が見やすい */
+}
+
+/* =================================================================
+   よくある質問ページ (FAQ Page)
+   ================================================================= */
+
+.content-section.faq-page {
+    max-width: 600px;
+    padding: 1rem;
+}
+
+.faq-item {
+    margin-bottom: 2.5rem; /* Q&A間の余白を広めに */
+}
+
+.faq-question, .faq-answer {
+    margin: 0;
+    padding-left: 2em; /* Q/Aマークの分だけインデント */
+    text-indent: -2em; /* Q/Aマークをインデントの外に出す */
+    line-height: 1.8;
+}
+
+.faq-question {
+    font-weight: bold; /* 質問文を太字に */
+    margin-bottom: 0.75rem;
+}
+
+.faq-prefix {
+    font-weight: bold;
+    font-size: 1.2rem; /* Q/Aマークを少し大きく */
+    margin-right: 0.5em; /* Q/Aマークと本文の間のスペース */
+}
+
+.faq-prefix.is-q {
+    color: #e82c5e; /* テーマカラー */
+}
+
+.faq-prefix.is-a {
+    color: #2196f3; /* 青色 */
+}
+
+/* =================================================================
+   無料体験ページ (Trial Page)
+   ================================================================= */
+
+.content-section.trial-page {
+    max-width: 600px;
+}
+
+.trial-points {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.trial-points-title {
+    color: #e82c5e;
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.trial-points-subtitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.points-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0.5rem 0;
+    text-align: left;
+}
+
+.points-list li {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.points-list li strong {
+    color: #e82c5e;
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
+}
+
+.trial-page .page-description {
+    line-height: 1.8;
+    text-align: center;
+}
+
+.text-note {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.trial-flow {
+    padding: 2.5rem;
+}
+
+.trial-flow .section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.trial-flow .section-title .main-title {
+    display: block;
+    font-size: 1.5rem;
+}
+.trial-flow .section-title .section-subtitle {
+    display: block;
+    font-size: 1rem;
+}

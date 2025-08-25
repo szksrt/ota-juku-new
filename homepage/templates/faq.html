@@ -2,39 +2,77 @@
 {% block title %}よくある質問 | 太田塾{% endblock %}
 {% block content %}
 
-<h2 style="text-align: center; margin-top: 1rem;">よくある質問</h2>
-<p style="text-align: center;"><a href="/">トップ</a> / よくある質問</p>
+<h2 class="page-title">よくある質問</h2>
+<p class="breadcrumb"><a href="{% url 'homepage:index' %}">トップ</a> / よくある質問</p>
 
-<section style="max-width: 600px; margin: 2rem auto; padding: 1rem;">
-    <div style="margin-bottom: 1.5rem;">
-        <p><span style="color: red; font-weight: bold;">Q</span> 入塾したいのですが、すぐにできますか？</p>
-        <p><span style="color: #2196f3; font-weight: bold;">A</span> 一度、無料体験授業にお申し込みください。その後カウンセリングをして入塾手続きを進めていきます。</p>
+<section class="content-section faq-page">
+
+    <div class="faq-item">
+        <p class="faq-question">
+            <span class="faq-prefix is-q">Q</span>
+            入塾したいのですが、すぐにできますか？
+        </p>
+        <p class="faq-answer">
+            <span class="faq-prefix is-a">A</span>
+            一度、無料体験授業にお申し込みください。その後カウンセリングをして入塾手続きを進めていきます。
+        </p>
     </div>
 
-    <div style="margin-bottom: 1.5rem;">
-        <p><span style="color: red; font-weight: bold;">Q</span> 入塾テストはありますか？</p>
-        <p><span style="color: #2196f3; font-weight: bold;">A</span> 入塾テストはありません。お子様の状況に合わせて指導を決めていきますのでご安心ください。</p>
+    <div class="faq-item">
+        <p class="faq-question">
+            <span class="faq-prefix is-q">Q</span>
+            入塾テストはありますか？
+        </p>
+        <p class="faq-answer">
+            <span class="faq-prefix is-a">A</span>
+            入塾テストはありません。お子様の状況に合わせて指導を決めていきますのでご安心ください。
+        </p>
     </div>
 
-    <div style="margin-bottom: 1.5rem;">
-        <p><span style="color: red; font-weight: bold;">Q</span> 定期テストや模擬試験対策はできますか？</p>
-        <p><span style="color: #2196f3; font-weight: bold;">A</span> 定期テストや模擬試験前には、テスト前特別対策講座を行っております。5教科以外にも対応しておりますのでご安心ください。</p>
+    <div class="faq-item">
+        <p class="faq-question">
+            <span class="faq-prefix is-q">Q</span>
+            定期テストや模擬試験対策はできますか？
+        </p>
+        <p class="faq-answer">
+            <span class="faq-prefix is-a">A</span>
+            定期テストや模擬試験前には、テスト前特別対策講座を行っております。5教科以外にも対応しておりますのでご安心ください。
+        </p>
     </div>
 
-    <div style="margin-bottom: 1.5rem;">
-        <p><span style="color: red; font-weight: bold;">Q</span> 自習室の利用はできますか？</p>
-        <p><span style="color: #2196f3; font-weight: bold;">A</span> 授業のある日でも授業のない日でも自由に利用できます。休校日以外はいつでも利用可能です。</p>
+    <div class="faq-item">
+        <p class="faq-question">
+            <span class="faq-prefix is-q">Q</span>
+            自習室の利用はできますか？
+        </p>
+        <p class="faq-answer">
+            <span class="faq-prefix is-a">A</span>
+            授業のある日でも授業のない日でも自由に利用できます。休校日以外はいつでも利用可能です。
+        </p>
     </div>
 
-    <div style="margin-bottom: 1.5rem;">
-        <p><span style="color: red; font-weight: bold;">Q</span> 入塾は月の途中でも可能ですか？</p>
-        <p><span style="color: #2196f3; font-weight: bold;">A</span> いつからでも入塾できます。月の途中でも回数に応じて回数割をしますのでご安心ください。</p>
+    <div class="faq-item">
+        <p class="faq-question">
+            <span class="faq-prefix is-q">Q</span>
+            入塾は月の途中でも可能ですか？
+        </p>
+        <p class="faq-answer">
+            <span class="faq-prefix is-a">A</span>
+            いつからでも入塾できます。月の途中でも回数に応じて回数割をしますのでご安心ください。
+        </p>
     </div>
 
-    <div style="margin-bottom: 1.5rem;">
-        <p><span style="color: red; font-weight: bold;">Q</span> 英検や漢検や数検の対策は可能ですか？</p>
-        <p><span style="color: #2196f3; font-weight: bold;">A</span> 可能です。検定に合わせて対策講座を行っておりますのでお気軽にお問い合わせください。</p>
+    <div class="faq-item">
+        <p class="faq-question">
+            <span class="faq-prefix is-q">Q</span>
+            英検や漢検や数検の対策は可能ですか？
+        </p>
+        <p class="faq-answer">
+            <span class="faq-prefix is-a">A</span>
+            可能です。検定に合わせて対策講座を行っておりますのでお気軽にお問い合わせください。
+        </p>
     </div>
+
 </section>
 
 {% endblock %}

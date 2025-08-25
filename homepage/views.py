@@ -4,10 +4,16 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from .forms import ContactForm
 from contact.models import Contact
+from blog.models import Post
 
 
 class IndexView(generic.TemplateView):
     template_name = "index.html"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Postを公開日が新しい順に3件取得して、コンテキストに追加
+        context['latest_posts'] = Post.objects.order_by('-published_date')[:3]
+        return context
 
 class FeatureView(generic.TemplateView):
     template_name = "feature.html"

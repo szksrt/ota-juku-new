@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ object.title }} | {{ block.super }}{% endblock %}
+
+{% block content %}
+  <div class="post-container">  <article class="post-detail"> <h1 class="post-title">{{ object.title }}</h1>
+      <p class="post-date">{{ object.published_date|date:"Y年n月j日" }}</p>
+      <div class="post-content">
+        {{ object.content|linebreaksbr }} {# 改行を<br>タグに変換 #}
+      </div>
+    </article>
+  </div>
+  <a href="{% url 'blog:post_list' %}" class="back-to-list">一覧に戻る</a>
+{% endblock %}

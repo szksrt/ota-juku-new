@@ -3,81 +3,81 @@
 {% block title %}オンライン授業 | 太田塾{% endblock %}
 {% block content %}
 
-<h2 style="text-align: center; margin-top: 1rem;">オンライン授業</h2>
-<p style="text-align: center;"><a href="/">トップ</a> / オンライン授業</p>
+<h2 class="page-title">オンライン授業</h2>
+<p class="breadcrumb"><a href="{% url 'homepage:index' %}">トップ</a> / オンライン授業</p>
 
-<section style="max-width: 600px; margin: 2rem auto;">
+<section class="content-section online-page">
 
-    <div style="text-align: center; margin-bottom: 1.5rem;">
-        <h3 style="color: #e82c5e; margin: 0;">学習塾について<br>こんなお悩みはありませんか？</h3>
+    <div class="intro-block">
+        <h3 class="intro-title">学習塾について<br>こんなお悩みはありませんか？</h3>
     </div>
 
-    <ul style="list-style: none; padding: 0; margin: 1rem 0;">
+    <ul class="concerns-list">
         <li>・塾まで行くことが面倒くさい</li>
         <li>・家でリラックスして受講したい</li>
         <li>・部活や習い事と両立したい</li>
         <li>・遠方で通塾が難しい</li>
     </ul>
 
-    <div style="background: #ffe6e6; padding: 1rem; border-radius: 8px; margin: 2rem 0;">
-        <h3 style="color: #e82c5e; margin: 0;">オンライン授業について</h3>
+    <div class="info-box accent-box">
+        <h3 class="info-box-title">オンライン授業について</h3>
         <p>
             太田塾では、塾まで通塾が難しい方のために「オンライン授業コース」を開設しました。<br>
             ご自宅から簡単に受講できる環境を整え、効率よく学習を進められるようサポートしています。
         </p>
     </div>
 
-    <div style="margin-bottom: 2rem;">
-        <h3 style="color: #e82c5e; margin-top: 0;">オンライン個別指導</h3>
+    <div class="features-block">
+        <h3 class="section-subtitle">オンライン個別指導</h3>
         <p>お子様に合わせた個別指導をオンラインで実施します。しっかりとサポートいたします。</p>
 
-        <h3 style="color: #e82c5e; margin-top: 1.5rem;">オンライン映像授業</h3>
+        <h3 class="section-subtitle">オンライン映像授業</h3>
         <p>映像授業により自宅学習をサポートします。繰り返し復習が可能です。</p>
     </div>
 
-    <h3 style="color: #e82c5e;">当塾のオンライン</h3>
-    <ul style="list-style: none; padding: 0;">
-        <li style="margin-bottom: 1rem;">
-            <strong style="color: #e82c5e;">◎ 必要なもの</strong><br>
-            パソコン（スマホ・タブレットでも可）とネット環境（Wi-Fi推奨）があれば受講できます。
+    <h3 class="section-subtitle">当塾のオンライン</h3>
+    <ul class="merit-list">
+        <li>
+            <strong class="merit-title">◎ 必要なもの</strong>
+            <p>パソコン（スマホ・タブレットでも可）とネット環境（Wi-Fi推奨）があれば受講できます。</p>
         </li>
-        <li style="margin-bottom: 1rem;">
-            <strong style="color: #e82c5e;">◎ 切り替えも可能</strong><br>
-            ご都合に応じて、通塾の対面授業からオンライン授業へ、またはその逆への切り替えが可能です。
+        <li>
+            <strong class="merit-title">◎ 切り替えも可能</strong>
+            <p>ご都合に応じて、通塾の対面授業からオンライン授業へ、またはその逆への切り替えが可能です。</p>
         </li>
-        <li style="margin-bottom: 1rem;">
-            <strong style="color: #e82c5e;">◎ 全学年に対応</strong><br>
-            小学生・中学生・高校生全学年に対応しています。
+        <li>
+            <strong class="merit-title">◎ 全学年に対応</strong>
+            <p>小学生・中学生・高校生全学年に対応しています。</p>
         </li>
     </ul>
 
-    <h3 style="color: #e82c5e; margin-top: 2rem;">受講の流れ</h3>
-    <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
-        <div style="border: 1px solid #ccc; border-radius: 8px; padding: 1rem;">
-            <p style="font-weight: bold; color: #e82c5e; margin: 0;">STEP 01</p>
-            <p>受講申込み</p>
-            <p>まずはお電話かWebフォームからお気軽にお申込みください。</p>
+    <h3 class="section-subtitle">受講の流れ</h3>
+    <div class="step-card-container">
+        <div class="step-card">
+            <p class="step-number">STEP 01</p>
+            <p class="step-card-title">受講申込み</p>
+            <p class="step-description">まずはお電話かWebフォームからお気軽にお申込みください。</p>
         </div>
-        <div style="border: 1px solid #ccc; border-radius: 8px; padding: 1rem;">
-            <p style="font-weight: bold; color: #e82c5e; margin: 0;">STEP 02</p>
-            <p>Zoomインストール</p>
-            <p>オンライン授業用のZoomをインストールし、接続テストを行います。</p>
+        <div class="step-card">
+            <p class="step-number">STEP 02</p>
+            <p class="step-card-title">Zoomインストール</p>
+            <p class="step-description">オンライン授業用のZoomをインストールし、接続テストを行います。</p>
         </div>
-        <div style="border: 1px solid #ccc; border-radius: 8px; padding: 1rem;">
-            <p style="font-weight: bold; color: #e82c5e; margin: 0;">STEP 03</p>
-            <p>勉強の準備</p>
-            <p>勉強するテキストや教材の用意をし、しっかり準備して授業に臨みましょう。</p>
+        <div class="step-card">
+            <p class="step-number">STEP 03</p>
+            <p class="step-card-title">勉強の準備</p>
+            <p class="step-description">勉強するテキストや教材の用意をし、しっかり準備して授業に臨みましょう。</p>
         </div>
-        <div style="border: 1px solid #ccc; border-radius: 8px; padding: 1rem;">
-            <p style="font-weight: bold; color: #e82c5e; margin: 0;">STEP 04</p>
-            <p>授業スタート</p>
-            <p>オンライン授業スタート！講師のサポートで安心して受講いただけます。</p>
+        <div class="step-card">
+            <p class="step-number">STEP 04</p>
+            <p class="step-card-title">授業スタート</p>
+            <p class="step-description">オンライン授業スタート！講師のサポートで安心して受講いただけます。</p>
         </div>
     </div>
 
-    <h3 style="color: #e82c5e; margin-top: 2rem;">時間割</h3>
-    <div style="border-top: 2px solid #e82c5e; margin-top: 1rem;"></div>
-    <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+    <h3 class="section-subtitle">時間割</h3>
+    <div class="section-divider"></div>
+    <ul class="timetable-list">
         <li>① 10:40～12:10</li>
         <li>② 13:10～14:40</li>
         <li>③ 14:50～16:20</li>
@@ -85,7 +85,7 @@
         <li>⑤ 18:20～19:50</li>
         <li>⑥ 20:00～21:30</li>
     </ul>
-    <p style="font-size: 0.9rem; margin-top: 1rem;">
+    <p class="timetable-notes">
         ※土曜・日曜は1限～5限までの授業です。<br>
         ※平日は4限～6限までの授業です。<br>
         ※時期によって変動する場合もありますのでご了承ください。

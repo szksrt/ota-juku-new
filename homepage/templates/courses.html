@@ -1,15 +1,22 @@
 {% extends "base.html" %}
 {% block title %}コース案内 | 太田塾{% endblock %}
 {% block content %}
-<h2>コース案内</h2>
-<p>
-    太田塾では、小学生・中学生・高校生を対象に、それぞれの学年・学力・目的に応じたコースを設けています。<br>
-    また、オンライン授業も完備しており、どこからでも安心して受講いただけます。
-</p>
-<div class="course-buttons">
-    <a href="/courses/elementary/" class="elementary">小学生コース</a>
-    <a href="/courses/junior/" class="junior">中学生コース</a>
-    <a href="/courses/high/" class="high">高校生コース</a>
-    <a href="/online/" class="online">オンライン授業</a>
-</div>
+
+<section class="content-section courses-overview-page">
+    <h2 class="page-title">コース案内</h2>
+    <p class="breadcrumb"><a href="{% url 'homepage:index' %}">トップ</a> / コース案内</p>
+    
+    <p class="page-description">
+        太田塾では、小学生・中学生・高校生を対象に、それぞれの学年・学力・目的に応じたコースを設けています。<br>
+        また、オンライン授業も完備しており、どこからでも安心して受講いただけます。
+    </p>
+
+    <div class="course-buttons">
+        <a href="{% url 'homepage:courses_elementary' %}" class="course-btn elementary">小学生コース</a>
+        <a href="{% url 'homepage:courses_junior' %}" class="course-btn junior">中学生コース</a>
+        <a href="{% url 'homepage:courses_high' %}" class="course-btn high">高校生コース</a>
+        <a href="{% url 'homepage:online' %}" class="course-btn online">オンライン授業</a>
+    </div>
+</section>
+
 {% endblock %}

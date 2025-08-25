@@ -1,50 +1,58 @@
 {% extends "base.html" %}
 {% block title %}トップページ | 太田塾{% endblock %}
 {% block content %}
-<!-- メインビジュアル -->
-<section class="main-visual">
-    <h2>楽しく学び 成績を伸ばす！</h2>
-    <p>太田塾で伸ばせる3つのポイント</p>
-    <ul class="point-list">
-        <li>太田塾独自のオリジナル教材を使用</li>
-        <li>先生が丁寧に指導してくれる</li>
-        <li>一人ひとりのペースに合わせた授業</li>
-    </ul>
-    <a href="#" class="btn">詳しく見る</a>
+
+<section class="section">
+    <h3 class="section-title">お知らせ</h3>
+    <div class="info-list">
+        {% for post in latest_posts %}
+            <div class="info-item">
+                <span class="info-date">{{ post.published_date|date:"Y年n月j日" }}</span>
+                <a href="{% url 'blog:post_detail' post.pk %}" class="info-title">{{ post.title }}</a>
+            </div>
+        {% empty %}
+            <p>お知らせはまだありません。</p>
+        {% endfor %}
+    </div>
+    <a href="{% url 'blog:post_list' %}" class="btn-more">もっと見る</a>
 </section>
 
-<!-- 太田塾の特徴 -->
+<section class="main-visual">
+    <div class="main-visual-content">
+        <h2 class="main-visual-title">楽しく学び 成績を伸ばす！</h2>
+        <p class="main-visual-subtitle">太田塾で伸ばせる3つのポイント</p>
+        <ul class="point-list">
+            <li>太田塾独自のオリジナル教材を使用</li>
+            <li>先生が丁寧に指導してくれる</li>
+            <li>一人ひとりのペースに合わせた授業</li>
+        </ul>
+        <a href="{% url 'homepage:feature' %}" class="btn">詳しく見る</a>
+    </div>
+</section>
+
 <section class="section">
-    <h3>太田塾の3つの特徴</h3>
-    <ul class="point-list">
+    <h3 class="section-title">太田塾の3つの特徴</h3>
+    <ul class="feature-list">
         <li>① 先生が丁寧に教えてくれる</li>
         <li>② 自分のペースで学べる</li>
         <li>③ 勉強をサポートする教材</li>
     </ul>
 </section>
 
-<!-- コース紹介 -->
 <section class="section">
-    <h3>コース紹介</h3>
+    <h3 class="section-title">コース紹介</h3>
     <div class="course-buttons">
-        <a href="/courses/elementary/" class="elementary">小学生コース</a>
-        <a href="/courses/junior/" class="junior">中学生コース</a>
-        <a href="/courses/high/" class="high">高校生コース</a>
-        <a href="/online/" class="online">オンライン授業</a>
+        <a href="{% url 'homepage:courses_elementary' %}" class="course-btn elementary">小学生コース</a>
+        <a href="{% url 'homepage:courses_junior' %}" class="course-btn junior">中学生コース</a>
+        <a href="{% url 'homepage:courses_high' %}" class="course-btn high">高校生コース</a>
+        <a href="{% url 'homepage:online' %}" class="course-btn online">オンライン授業</a>
     </div>
 </section>
 
-<!-- お知らせ -->
-<section class="info">
-    <h3>お知らせ</h3>
-    <p>2025年6月1日　模試のお知らせ</p>
-    <p>2025年6月5日　夏期講習スタート</p>
+<section class="section cta-section">
+    <h3 class="section-title">資料請求・お問い合わせ</h3>
+    <p>お気軽にお問い合わせください。電話: 000-000-0000</p>
+    <a href="{% url 'homepage:contact' %}" class="btn">資料請求・お問い合わせ</a>
 </section>
 
-<!-- 資料請求・お問い合わせ -->
-<section class="section" style="background: #f8d7da;">
-    <h3>資料請求・お問い合わせ</h3>
-    <p>お気軽にお問い合わせください。電話: 0120-000-000</p>
-    <a href="/contact/" class="btn">資料請求・お問い合わせ</a>
-</section>
 {% endblock %}

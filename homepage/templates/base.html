@@ -9,41 +9,39 @@
 </head>
 <body>
 <header>
-    <a href="{% url 'homepage:index' %}">
-        <img src="{% static 'images/logo.png' %}" alt="太田塾 ロゴ" class="logo">
-    </a>
-    <div class="right-area">
-        <a href="{% url 'homepage:contact' %}" class="contact-btn">資料請求・ご相談</a>
-        <div class="menu-btn" onclick="openMenu()" aria-label="メニューを開く">&#9776;</div>
-    </div>
-</header>
+    <div class="header-container">  <a href="{% url 'homepage:index' %}">
+            <img src="{% static 'images/logo.png' %}" alt="太田塾 ロゴ" class="logo">
+        </a>
+        <div class="right-area">
+            <a href="{% url 'homepage:contact' %}" class="contact-btn">資料請求・ご相談</a>
+            <div class="menu-btn" aria-label="メニューを開く">&#9776;</div>
+        </div>
+    </div>  </header>
 
-
-
-
-    <!-- ハンバーガーメニュー -->
     <nav class="menu" id="menu">
-        <div class="close-btn" onclick="closeMenu()">×</div>
-        <ul>
-            <li><a href="/">トップページ</a></li>
-            <li><a href="/feature/">特徴</a></li>
-            <li><a href="/greeting/">塾長挨拶</a></li>
-            <li><a href="/courses/">コース案内</a></li>
-            <li><a href="/courses/elementary/">小学生コース</a></li>
-            <li><a href="/courses/junior/">中学生コース</a></li>
-            <li><a href="/courses/high/">高校生コース</a></li>
-            <li><a href="/online/">オンライン授業</a></li>
-            <li><a href="/admission/">入塾の流れ</a></li>
-            <li><a href="/trial/">無料体験授業</a></li>
-            <li><a href="/faq/">よくある質問</a></li>
-            <li><a href="/about/">塾概要</a></li>
-            <li><a href="/contact/">お問い合わせフォーム</a></li>
-        </ul>
+        <div class="menu-content">
+            <div class="close-btn">×</div>
+            <ul>
+                <li><a href="{% url 'homepage:index' %}">トップページ</a></li>
+                <li><a href="{% url 'blog:post_list' %}">お知らせ</a></li>
+                <li><a href="{% url 'homepage:feature' %}">特徴</a></li>
+                <li><a href="{% url 'homepage:greeting' %}">塾長挨拶</a></li>
+                <li><a href="{% url 'homepage:courses' %}">コース案内</a></li>
+                <li><a href="{% url 'homepage:courses_elementary' %}">小学生コース</a></li>
+                <li><a href="{% url 'homepage:courses_junior' %}">中学生コース</a></li>
+                <li><a href="{% url 'homepage:courses_high' %}">高校生コース</a></li>
+                <li><a href="{% url 'homepage:online' %}">オンライン授業</a></li>
+                <li><a href="{% url 'homepage:admission' %}">入塾の流れ</a></li>
+                <li><a href="{% url 'homepage:trial' %}">無料体験授業</a></li>
+                <li><a href="{% url 'homepage:faq' %}">よくある質問</a></li>
+                <li><a href="{% url 'homepage:about' %}">塾概要</a></li>
+                <li><a href="{% url 'homepage:contact' %}">お問い合わせフォーム</a></li>
+            </ul>
+        </div>
     </nav>
 
     <main>
         {% block content %}
-        <!-- 各ページの内容がここに差し込まれる -->
         {% endblock %}
     </main>
 
@@ -51,13 +49,6 @@
         <p>&copy; 2025 太田塾</p>
     </footer>
 
-    <script>
-        function openMenu() {
-            document.getElementById('menu').style.display = 'block';
-        }
-        function closeMenu() {
-            document.getElementById('menu').style.display = 'none';
-        }
-    </script>
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

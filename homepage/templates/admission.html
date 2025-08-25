@@ -2,29 +2,30 @@
 {% block title %}入塾の流れ | 太田塾{% endblock %}
 {% block content %}
 
-<h2 style="text-align: center; margin-top: 1rem;">入塾の流れ</h2>
-<p style="text-align: center;"><a href="/">トップ</a> / 入塾の流れ</p>
+<h2 class="page-title">入塾の流れ</h2>
+<p class="breadcrumb"><a href="{% url 'homepage:index' %}">トップ</a> / 入塾の流れ</p>
 
-<section style="max-width: 600px; margin: 2rem auto; padding: 1rem;">
-    <div style="border: 1px solid #ccc; border-radius: 8px; background: #fff; padding: 1rem; margin-bottom: 1.5rem;">
-        <h3 style="color: #e82c5e; font-size: 1.5rem; margin: 0;">1 まずはお問い合わせください</h3>
-        <p>
+<section class="content-section admission-page">
+    
+    <div class="step-card">
+        <h3 class="step-title">1 まずはお問い合わせください</h3>
+        <p class="step-description">
             当塾にご興味を持っていただけましたら、お電話にてお問い合わせいただくか無料体験申込みフォームよりお申し込みください。
         </p>
     </div>
 
-    <div style="border: 1px solid #ccc; border-radius: 8px; background: #fff; padding: 1rem; margin-bottom: 1.5rem;">
-        <h3 style="color: #e82c5e; font-size: 1.5rem; margin: 0;">2 無料体験授業を受講</h3>
-        <p>
+    <div class="step-card">
+        <h3 class="step-title">2 無料体験授業を受講</h3>
+        <p class="step-description">
             どんな授業でどんな先生がいるのかを、実際に体験していただけます。<br>
             この無料体験授業は、無料体験用ではなく普段と同じ授業を受けていただきますので、勉強方法、授業の雰囲気、講師との相性がわかります。<br>
             大事な部分ですので、ぜひ体験授業でチェックしてください。
         </p>
     </div>
 
-    <div style="border: 1px solid #ccc; border-radius: 8px; background: #fff; padding: 1rem; margin-bottom: 1.5rem;">
-        <h3 style="color: #e82c5e; font-size: 1.5rem; margin: 0;">3 学力テストを受講</h3>
-        <p>
+    <div class="step-card">
+        <h3 class="step-title">3 学力テストを受講</h3>
+        <p class="step-description">
             このテストはお子様の学力をみるために行う授業です。<br>
             学力テストの結果でクラスを決定しますので、テスト範囲を復習してから受けていただくことをお勧めしています。<br>
             テスト範囲は学校で習っている基本的な部分になります。<br>
@@ -33,23 +34,24 @@
         </p>
     </div>
 
-    <div style="border: 1px solid #ccc; border-radius: 8px; background: #fff; padding: 1rem; margin-bottom: 1.5rem;">
-        <h3 style="color: #e82c5e; font-size: 1.5rem; margin: 0;">4 カウンセリング</h3>
-        <p>
+    <div class="step-card">
+        <h3 class="step-title">4 カウンセリング</h3>
+        <p class="step-description">
             学力テストを受講いただき、入塾をご希望の方は簡単なカウンセリングをさせていただきます。<br>
             ご家庭での様子や目標にする進路（学習）を確認し、現状の学力状況を踏まえた上で、授業内容や受講科目をご提案させていただきます。<br>
             この時に受講科目や授業内容などを決定いたします。
         </p>
     </div>
 
-    <div style="border: 1px solid #ccc; border-radius: 8px; background: #fff; padding: 1rem; margin-bottom: 1.5rem;">
-        <h3 style="color: #e82c5e; font-size: 1.5rem; margin: 0;">5 入塾手続き</h3>
-        <p>
+    <div class="step-card">
+        <h3 class="step-title">5 入塾手続き</h3>
+        <p class="step-description">
             入塾手続きに必要な書類をご準備いただき、入塾となります。<br>
             入塾決定後も、不安な点やご質問に対応しておりますので、お気軽にご相談ください。<br>
             目標に向かって一緒に頑張りましょう！
         </p>
     </div>
+
 </section>
 
 {% endblock %}

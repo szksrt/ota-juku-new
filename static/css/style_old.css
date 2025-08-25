@@ -1,0 +1,444 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+header {
+    background: white;
+    color: black;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* 追加 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 999;
+}
+
+header > div {
+    min-width: 0; /* 追加 */
+    display: flex;
+    align-items: center;
+}
+
+/* 画面が大きいときだけmax-widthを制御 */
+@media screen and (min-width: 1200px) {
+    header {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 480px) {
+    header img.logo {
+        max-width: 120px;  /* さらに縮める */
+        height: auto;      /* 縦横比は自動で合わせる */
+    }
+}
+
+.right-area {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 1;  /* 狭いとき縮む */
+    overflow: hidden; /* はみ出さないように */
+}
+.contact-btn {
+    background: #e82c5e;
+    color: white;
+    padding: 0.4rem 0.8rem; /* 少し狭め */
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    white-space: nowrap; /* 改行させない */
+}
+.menu-btn {
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+}
+
+main {
+    padding-top: 110px;  /* ヘッダーの高さ分の余白を上部に作る */
+}
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+.menu-btn {
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+}
+.menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 999;
+    overflow-y: auto;
+}
+.menu ul {
+    list-style: none;
+    padding: 2rem;
+    margin: 0;
+}
+.menu ul li {
+    padding: 1rem 0;
+    border-bottom: 1px solid #ccc;
+    font-size: 1.2rem;
+}
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+}
+.menu a {
+    color: black;
+    text-decoration: none;
+}
+.main-visual {
+    background: #f0f0f0;
+    padding: 2rem;
+    text-align: center;
+}
+.main-visual h2 {
+    color: #e82c5e;
+    margin-bottom: 1rem;
+}
+.point-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+.point-list li {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    text-align: left;
+}
+.btn {
+    display: inline-block;
+    background: #e82c5e;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+}
+.section {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+.section h3 {
+    color: #e82c5e;
+    margin-bottom: 1rem;
+}
+.course-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 300px;
+    margin: 0 auto;
+}
+.course-buttons a {
+    display: block;
+    padding: 0.75rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.elementary {
+    background: #ff6f61;
+}
+.junior {
+    background: #4caf50;
+}
+.high {
+    background: #2196f3;
+}
+.online {
+    background: #ff9800;
+}
+.teacher,
+.info {
+    padding: 1rem;
+    text-align: center;
+}
+.teacher img,
+.info img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+
+.blog-post {
+    border: 1px solid #e0e0e0; /* 薄いグレーの枠線 */
+    padding: 20px;               /* 内側の余白 */
+    margin-bottom: 25px;         /* 各投稿の下の余白 */
+    border-radius: 8px;          /* 角を少し丸くする */
+    background-color: #f9f9f9;   /* 背景を少しグレーに */
+}
+
+.blog-post h2 {
+    margin-top: 0; /* タイトルの上の余白をなくす */
+}
+
+/* ページ全体のコンテナ */
+.post-container {
+    max-width: 800px; /* 最大幅を指定して、横に広がりすぎないようにする */
+    margin: 40px auto;  /* 上下に40px、左右はautoで中央寄せ */
+    padding: 0 20px;    /* 左右に少し余白 */
+}
+
+/* 記事本体 */
+.post-detail {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 30px 40px; /* 内側の余白を広めに */
+    border-radius: 8px;
+}
+
+/* 記事のタイトル */
+.post-title {
+    font-size: 2.5rem; /* 文字を大きく */
+    margin-bottom: 10px;
+}
+
+/* 公開日 */
+.post-date {
+    color: #888; /* 文字を少し薄いグレーに */
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+/* 本文 */
+.post-content {
+    font-size: 1.1rem;
+    line-height: 1.8; /* 行間を広げて読みやすくする */
+}
+
+/* 一覧に戻るリンク */
+.back-to-list {
+    display: inline-block;
+    margin-top: 20px;
+}
+/* ページタイトル */
+.page-title {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* パンくずリスト */
+.breadcrumb {
+    text-align: center;
+}
+
+/* コンテンツセクションのベース */
+.content-section {
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+/* カードを囲むコンテナ */
+.card-container {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+/* カードの基本スタイル */
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+/* お知らせカード特有のスタイル */
+.post-card {
+    margin-bottom: 2rem;
+}
+/* 最後のお知らせカードの下の余白だけ消す */
+.post-card:last-child {
+    margin-bottom: 0;
+}
+
+.post-card-title {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.post-card-title a {
+    text-decoration: none;
+    color: #333;
+}
+
+.post-card-date {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 1rem;
+}
+
+.post-card-excerpt {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.7;
+}
+/* --- 塾概要ページ（About Page）のスタイル --- */
+
+.content-section.about-page {
+    max-width: 600px;
+}
+
+.about-block {
+    margin-bottom: 2rem;
+}
+
+.block-title {
+    color: #e82c5e;
+    margin: 0 0 1rem 0; /* 下にだけ余白を追加 */
+}
+
+.block-subtitle {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.info-box {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.info-item {
+    margin-bottom: 1rem;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-item strong {
+    display: block; /* ラベルと内容を確実に改行させる */
+    margin-bottom: 0.25rem;
+}
+
+.map-container {
+    margin-top: 1rem;
+    width: 100%;
+    aspect-ratio: 4 / 3; /* 地図の縦横比を4:3に保つ */
+}
+
+.map-iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.access-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+    line-height: 1.8;
+}
+
+.cta-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.phone-button {
+    background: #e82c5e;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 30px; /* 角丸を少し調整 */
+    text-decoration: none;
+    display: inline-block;
+    line-height: 1.5;
+}
+
+.phone-button .button-subtitle {
+    font-size: 0.8rem;
+}
+/* --- 入塾の流れページ（Admission Page）のスタイル --- */
+
+.content-section.admission-page {
+    max-width: 600px;
+    padding: 1rem;
+}
+
+/* 各ステップのカード */
+.step-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: #fff;
+    padding: 1.5rem 2rem; /* 余白を少し調整 */
+    margin-bottom: 1.5rem;
+}
+
+.step-card:last-child {
+    margin-bottom: 0; /* 最後のカードの下の余白は不要 */
+}
+
+/* ステップのタイトル */
+.step-title {
+    color: #e82c5e;
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0; /* タイトルの下にだけ余白を設定 */
+}
+
+/* ステップの説明文 */
+.step-description {
+    margin: 0; /* pタグのデフォルトの余白をリセット */
+    line-height: 1.7; /* 行間を広げて読みやすくする */
+}
+/* --- ハンバーガーメニューの表示制御 --- */
+
+.menu {
+    display: none; /* 通常時は非表示 */
+    position: fixed; /* 画面に固定 */
+    top: 0;
+    right: 0;
+    width: 280px; /* メニューの幅 */
+    height: 100%;
+    background-color: #fff;
+    z-index: 1000; /* 他の要素より手前に表示 */
+    /* 以下、アニメーションなどを追加することも可能 */
+}
+
+.menu.is-open {
+    display: block; /* is-openクラスが付いたら表示 */
+}
+
+.menu-btn {
+    cursor: pointer; /* マウスカーソルを指の形に */
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 2rem;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+}
