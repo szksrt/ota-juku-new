@@ -12,6 +12,6 @@ https://ota-juku-new.onrender.com/
 ## 技術スタック
 - 言語: Python 3.x
 - フレームワーク: Django 5.x
-- フロントエンド: HTML / CSS （＋Bootstrap）
+- フロントエンド: HTML / CSS / JavaScript
 - データベース: SQLite（開発環境） / PostgreSQL 17（本番環境 Render）
 - デプロイ環境: Render
