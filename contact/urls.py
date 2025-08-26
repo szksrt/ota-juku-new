@@ -4,6 +4,8 @@ from . import views
 app_name = 'contact'
 
 urlpatterns = [
-    # ここに、今後作成するお問い合わせフォームなどのURLパターンを追加していきます。
-    # 例: path('', views.ContactView.as_view(), name='index'),
+    # お問い合わせフォームページ
+    path('', views.ContactView.as_view(), name='index'),
+    # 送信完了ページ
+    path('success/', views.ContactSuccessView.as_view(), name='success'),
 ]

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}お問い合わせありがとうございます | 太田塾{% endblock %}
+{% block content %}
+
+<section class="content-section text-center">
+    <h2 class="page-title">お問い合わせありがとうございます</h2>
+    <p class="page-description">
+        お問い合わせを受け付けました。3営業日以内にご返信いたします。
+    </p>
+    <a href="{% url 'homepage:index' %}" class="btn">トップページに戻る</a>
+</section>
+{% endblock %}

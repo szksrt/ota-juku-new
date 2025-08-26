@@ -13,7 +13,7 @@
             <img src="{% static 'images/logo.png' %}" alt="太田塾 ロゴ" class="logo">
         </a>
         <div class="right-area">
-            <a href="{% url 'homepage:contact' %}" class="contact-btn">資料請求・ご相談</a>
+            <a href="{% url 'contact:index' %}" class="contact-btn">資料請求・ご相談</a>
             <div class="menu-btn" aria-label="メニューを開く">&#9776;</div>
         </div>
     </div>  </header>
@@ -35,7 +35,7 @@
                 <li><a href="{% url 'homepage:trial' %}">無料体験授業</a></li>
                 <li><a href="{% url 'homepage:faq' %}">よくある質問</a></li>
                 <li><a href="{% url 'homepage:about' %}">塾概要</a></li>
-                <li><a href="{% url 'homepage:contact' %}">お問い合わせフォーム</a></li>
+                <li><a href="{% url 'contact:index' %}">お問い合わせフォーム</a></li>
             </ul>
         </div>
     </nav>
